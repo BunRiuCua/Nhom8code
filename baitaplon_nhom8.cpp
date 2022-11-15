@@ -399,10 +399,10 @@ void ExportStudent(Student a)
 	cout << "Diem TB: " << a.fAVR << "\n";
 }
 
-void SortIncList(List l)
+void SortIncList(List l)//sort by avr (sap xep theo diem)
 {
 	Student temp;
-	for (Node* p = l.pHead; p->pNext; p = p->pNext)
+	for (Node* p = l.pHead; p->pNext; p = p->pNext)//bubble sort(sap xep noi bot)
 		for (Node* q = p->pNext; q; q = q->pNext)
 			if ((bool)ComPare(p->Data, q->Data))
 			{
@@ -481,22 +481,23 @@ void Change(float& a)
 }
 void Menu()
 {
-	cout << "Nhap truong hop: \n";
-	cout << "1: them sinh vien vao cuoi danh sach\n";
-	cout << "2: them sinh vien vao dau danh sach\n";
-	cout << "3: Xoa\n";
-	cout << "4: Cap nhat thong tin sinh vien\n";
-	cout << "5: Xuat danh sach sinh vien\n";
-	cout << "6: Kiem tra danh sach sinh vien co rong hay khong\n";
-	cout << "7: Sap xep danh sach sinh vien\n";
-	cout << "8: So sanh diem 2 sinh vien\n";
-	cout << "9: Tim kiem sinh vien\n";
-	cout << "0: Thoat";
+    cout << " *********************************************************\n";
+	cout << "**   NHAP TRUONG HOP:                                    **\n";
+	cout << "**   1: them sinh vien vao cuoi danh sach                **\n";
+	cout << "**   2: them sinh vien vao dau danh sach                 **\n";
+	cout << "**   3: Xoa                                              **\n";
+	cout << "**   4: Cap nhat thong tin sinh vien                     **\n";
+	cout << "**   5: Xuat danh sach sinh vien                         **\n";
+	cout << "**   6: Kiem tra danh sach sinh vien co rong hay khong   **\n";
+	cout << "**   7: Sap xep danh sach sinh vien                      **\n";
+	cout << "**   8: So sanh diem 2 sinh vien                         **\n";
+	cout << "**   9: Tim kiem sinh vien                               **\n";
+	cout << "**   0: Thoat                                            **\n";
+	cout << " *********************************************************\n";
 }
-Node* Search(List l, string name)
+Node* Search(List l, string name)//Search by name (tim kiem theo ten)
 {
-	for (Node* i = l.pHead; i != NULL; i = i->pNext)
+	for (Node* i = l.pHead; i != NULL; i = i->pNext)//Linear search (tim kiem tuan tu )
 		if (i->Data.sName == name) return i;
 	return NULL;
 }
-
